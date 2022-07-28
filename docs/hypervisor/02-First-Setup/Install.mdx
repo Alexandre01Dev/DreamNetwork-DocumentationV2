@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+---
+# Install your versions 😺
+
+You need to type service add serverType mode minimum-ram maximum-ram
+
+```bash
+service install type serverName VERSION
+```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { PesterDataTable, PesterDataButton } from "@site/src/components/PesterDataTable"; import { columns, articles, moduleTests } from "./articles.table.js";
+
+<Tabs>
+  <TabItem value="proxy" label="DreamNetwork.jar - Example Proxy" default>
+
+```jsx title=/root/DNLauncher.jar
+service install proxy proxy BUNGEECORD
+```
+
+  </TabItem>
+  <TabItem value="server" label="DreamNetwork.jar - Example Server">
+
+```jsx title=/root/DNLauncher.jar
+service install server lobby 1.8.8
+```
+  
+  </TabItem>
+
+</Tabs>
+
+
+
+<PesterDataTable columns={columns} data={ articles } />
+
+
+
