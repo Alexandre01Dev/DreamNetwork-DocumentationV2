@@ -1,0 +1,98 @@
+---
+sidebar_position: 3
+---
+# Commandes
+
+
+Vous pouvez créer vos propres commandes sur DreamNetwork
+
+
+> Créer une classe pour votre commandes et étendez là par la classe "Command" du package be.alexandre01.dreamnetwork
+
+```java
+public class TestCommand extends Command {
+    public TestCommand() {
+        super("hello");
+    }
+}    
+```
+
+> Pour lire votre commande vous pouvez utiliser
+
+```java
+@Override
+public boolean onCommand(String[] args) {
+    if(args.length == 0){
+        System.out.println("World");
+        return true;
+    }
+    return false;
+}
+```
+
+> Le **return** est important, si vous retournez false, pour dreamnetwork, la commande n'existe pas ou est mal utilisé, si un HelpBuilder est mis en place, il sera executé pour la commande.
+
+:::warning
+Contrairement à la librairie de Spigot, le premier argument est la commande executé, dans notre cas test. Donc n'oubliez pas de le prendre en compte ! 
+:::
+
+### Sous-Commandes
+Vous pouvez aussi utiliser les Sous-Commandes (SubCommand)
+
+Dans votre constructeur, vous pouvez rajouter la methode "addSubCommands" pour permettre de lire facilement le deuxieme argument tapé dans la console.
+
+
+
+```java
+public TestCommand() {
+    super("hello");
+    addSubCommand("Bernard", new SubCommandExecutor() {
+        @Override
+        public boolean onSubCommand(@NonNull String[] args) {
+            System.out.println("Hello Patrick");
+            return true;
+        }
+    });
+}
+```
+
+
+### Mettre en place un HelpBuilder
+
+Dans votre constructeur, vous pouvez créer et personnaliser les message de help.
+
+```java
+public TestCommand() {
+    super("hello");
+    addSubCommand("Bernard", new SubCommandExecutor() {
+        @Override
+        public boolean onSubCommand(@NonNull String[] args) {
+            System.out.println("Hello Patrick");
+            return true;
+        }
+    });
+
+    getHelpBuilder().setTitleUsage("Ceci est une commande de test et de salutation");
+    getHelpBuilder().setCmdUsage("Dire bonjour à Bernard","bernard");
+}
+```
+
+
+### Enregistrement
+
+> Une fois la classe créée il vous faut l'enregistrer grace à la DNClientAPI et à la méthode getCommandReader
+
+Revenez dans la classe principale
+Et dans le start rajoutez:
+```java
+@Override
+public void start() {
+    // code en haut
+
+    getDnClientAPI().getCommandReader().getCommands().addCommands(new TestCommand());
+}
+ ```   
+
+
+
+

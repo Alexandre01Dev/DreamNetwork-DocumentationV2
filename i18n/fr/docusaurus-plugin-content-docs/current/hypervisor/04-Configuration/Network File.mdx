@@ -1,0 +1,47 @@
+---
+sidebar_position: 1
+---
+
+# Le fichier Network 🖧
+
+
+
+Il s'agit du fichier de configuration utilisé pour que le système sache par défaut ce qu'il doit faire.
+
+```yaml
+# Lobby's configuration of the startup -|- DreamNetwork™ 2022
+type: DYNAMIC #Ou STATIC ; Vous pouvez changez le type ici 
+xms: 1G # RAM Minimum
+xmx: 2G # RAM Maximum
+executable: paper_spigot_1_8_8 # le jar qui va s'executer
+java-version: 8 #La version de java, vous pouvez trouver vos versions dans le dossier de données de DreamNetwork dans le JDKIndex.json
+proxy: false
+```
+
+
+
+Il y a une méthode en plus qui peut être rajouté et qui se nomme startup.
+
+Vous pouvez vous même rajouter vos propres arguments Java customisé pour chaque serveur.
+
+%java% : Le chemin vers la version du Java utilisé pour le serveur actuel
+
+%xms%: Ram minimum
+
+%xmx%: Ram maximum
+
+%exec%: Le fichier utilisé pour executer le serveur / proxy
+
+```yaml
+#Exemple avec l'optimisation Aikar
+startup: %java% -DB=false -DN=false -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -Xms%xms% -Xmx%xmx% -jar %exec% nogui
+```
+
+
+
+:::info
+
+Dans la version actuelle de DreamNetwork, vous devez le redémarrer pour appliquer les changements.
+
+:::
+

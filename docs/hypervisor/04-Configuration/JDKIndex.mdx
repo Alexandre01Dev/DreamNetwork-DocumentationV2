@@ -1,0 +1,33 @@
+---
+sidebar_position: 3
+---
+
+# Le fichier JDKIndex 📦
+
+
+
+Le fichier JDKIndex se trouve dans le dossier data dans la racine de DreamNetwork
+
+Elle permet de stocker toute les versions Java disponnible sur la machine.
+
+
+
+
+
+
+
+Voici le fichier de configuration type:
+
+```yaml
+{"default":"java","1.11.0":"/usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java","1.8.0":"/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java","8":"/usr/lib/jvm/zulu-8-amd64/bin/java","11":"/usr/lib/jvm/java-11-openjdk-amd64/bin/java","java8":"/usr/lib/jvm/bellsoft-java8-amd64/bin/java"}
+```
+
+
+
+Si vous n'avez pas la version Java inscrite dans le fichier, vous pouvez le rajouter manuellement comme dans l'exemple en haut, sinon si vous êtes sur linux, vous pouvez supprimer et replacer le fichier.
+
+
+
+Normalement lors de la création des serveurs minecraft, dans le fichier Network.yml crée dans le dossier du serveur, vous devez trouver une ligne avec la version Java utilisé.
+
+Voir [ici](./Network File.mdx)

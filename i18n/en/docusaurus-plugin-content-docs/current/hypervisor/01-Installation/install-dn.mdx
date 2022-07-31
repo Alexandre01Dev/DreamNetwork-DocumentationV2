@@ -1,0 +1,27 @@
+---
+sidebar_position: 2
+---
+# Install the Hypervisor🌥️
+
+First, you'll need to download the DreamNetwork Hypervisor's Launcher:<br/>
+```wget https://cdn.dreamnetwork.cloud/hypervisor/launcher/DNLauncher.jar```
+
+Give it some permissions<br/>
+```chmod +x DNLauncher.jar```
+
+Then launch it or create a shell ("~.sh" file) with this command:<br/>
+```bash
+java -jar -Xms128M -Xmx512M -XX:+UseG1GC -XX:MinHeapFreeRatio=15 -XX:MaxHeapFreeRatio=30 -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=50 -XX:CompileThreshold=100 -XX:+UseCompressedOops -jar DNLauncher.jar
+```
+
+:::danger If you use Java 9 or higher: please add those arguments before the -jar argument:
+```bash
+--add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/jdk.internal.ref=ALL-UNNAMED
+```
+Example: 
+```bash
+java -Xms128M -Xmx512M --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/jdk.internal.ref=ALL-UNNAMED -jar DNLauncher.jar
+```
+
+It helps to prevent for carbage collections
+:::

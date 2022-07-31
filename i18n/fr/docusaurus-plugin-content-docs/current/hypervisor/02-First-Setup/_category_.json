@@ -1,6 +1,6 @@
 {
-  "label": "Commands",
-  "position": 3,
+  "label": "Première configuration",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "The Hypervisor Documentation"

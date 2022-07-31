@@ -1,0 +1,39 @@
+---
+sidebar_position: 0
+---
+# Depends
+
+
+
+Vous pouvez télécharger l'API coté Addon sur ce lien:
+
+https://cdn.dreamnetwork.cloud/hypervisor/api/1.10/DreamNetwork-api.jar
+
+
+
+Ajoutez DreamNetwork-api.jar dans un dossier facilement accessible par votre IDE, dans le cas de l'exemple ci-dessous, il se situra dans le dossier libs.
+
+
+
+Rajouter les dépendences suivantes
+
+```xml
+    <dependency>
+        <groupId>be.alexandre01.dreamnetwork</groupId>
+        <artifactId>DreamNetwork-Plugin-API</artifactId>
+        <version>1.4.0-SNAPSHOT</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/libs/DreamNetwork-Plugin-api.jar</systemPath>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.22</version>
+        <scope>compile</scope>
+    </dependency>
+```
+
+
+
+
+

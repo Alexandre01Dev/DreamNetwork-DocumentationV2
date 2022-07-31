@@ -1,0 +1,31 @@
+---
+sidebar_position: 1
+---
+# Create your first servers 👀
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+  <TabItem value="proxy" label="DreamNetwork.jar - Example Proxy" default>
+
+```jsx title=/root/DNLauncher.jar
+service add proxy proxy STATIC 128M 512M
+```
+
+  </TabItem>
+  <TabItem value="server" label="DreamNetwork.jar - Example Server">
+
+```jsx title=/root/DNLauncher.jar
+service add server lobby DYNAMIC 1G 2G
+```
+   </TabItem>
+
+</Tabs>
+
+
+
+
+
+
+

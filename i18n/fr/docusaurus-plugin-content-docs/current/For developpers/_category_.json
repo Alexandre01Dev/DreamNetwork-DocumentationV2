@@ -1,6 +1,6 @@
 {
-  "label": "Commands",
-  "position": 3,
+  "label": "Pour les développeurs",
+  "position": 1,
   "link": {
     "type": "generated-index",
     "description": "The Hypervisor Documentation"

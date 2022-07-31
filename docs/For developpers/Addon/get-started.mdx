@@ -1,0 +1,86 @@
+---
+sidebar_position: 1
+---
+# To begin
+
+Créer votre classe principale et étendez-le par DreamExtension
+
+
+
+Exemple:
+
+```java
+public class Main extends DreamExtension {
+    
+}
+```
+
+
+
+Puis crée le constructeur qui est le suivant
+
+
+
+Exemple:
+
+```java
+public class Main extends DreamExtension {
+    
+    public Main(Addon addon){
+        super(addon);
+    }
+}
+```
+
+
+
+L'api des addons ont pour but d'être assez ressemblant à celle de Spigot et Bungeecord.
+
+
+
+Vous pouvez Override les méthodes qui sont les suivantes
+
+
+
+onLoad:
+
+> Vous permets d'executer du code directement lors de l'initialisation de l'addon
+
+```java
+    @Override
+    public void onLoad() {
+       
+    }
+```
+
+
+
+start:
+
+> Vous permets d'executer du code lorsque DreamNetwork est totalement chargé
+
+
+
+
+
+
+
+```java
+    @Override
+    public void start() {
+        
+    }
+```
+
+
+
+ stop:
+
+> Vous permets d'executer du code directement lors de l'extinction de DreamNetwork
+
+```java
+    @Override
+    public void stop() {
+        
+    }
+```

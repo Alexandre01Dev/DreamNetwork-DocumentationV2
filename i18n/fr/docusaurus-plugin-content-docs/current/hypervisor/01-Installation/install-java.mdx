@@ -1,0 +1,51 @@
+---
+sidebar_position: 1
+---
+# Installer Java📲
+
+## Debian/Ubuntu & d'autres dérivations
+
+Tout d'abord, vous devez mettre a jour votre système via cette commande <br/>
+```sudo apt update && sudo apt upgrade```
+
+Par après, vous devez regarder si vous avez déjà java d'installé sur votre système <br/>
+```java --version```
+
+Si la commande ne vous returne rien, vous pouvez procéder à l'installation de java.
+
+### Java 8
+> Java 8 est recommandé pour les Networks qui vont tourner sur les versions minecraft d'**1.7.10 jusqu'à 1.10.2** .
+
+```sudo apt install openjdk-8-jdk```
+
+Si vous n'avez pas le paquet, vous pouvez installer adoptjdk-8
+
+### Java 11
+> Java 11 est recommandé pour les Networks sur les versions minecraft d'**1.10.2 to 1.16**.
+
+```sudo apt install openjdk-11-jdk```
+
+### Java 17
+> Java 17  est recommandé pour les Networks sur les versions minecraft d'**1.16 and further** .
+
+```sudo apt install openjdk-17-jdk```
+
+## CentOS
+
+Mettez à jour votre système
+```sudo yum -y update```
+
+### Java 8
+```sudo yum install java-1.8.0-openjdk```
+
+### Java 11
+```sudo yum install java-11-openjdk```
+
+### Java 17
+
+```sudo yum -y install wget curl``` <br/><br/>
+```wget https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz```<br/><br/>
+```sudo tar xvf openjdk-17_linux-x64_bin.tar.gz```<br/><br/>
+```sudo mv jdk-17 /opt/```<br/><br/>
+```echo "export JAVA_HOME=/opt/jdk-17 export PATH=$PATH:$JAVA_HOME/bin" >> ~/.bashrc```<br/><br/>
+```source ~/.bashrc```

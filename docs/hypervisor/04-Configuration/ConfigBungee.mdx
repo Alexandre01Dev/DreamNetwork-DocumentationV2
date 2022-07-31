@@ -1,0 +1,30 @@
+---
+sidebar_position: 4
+---
+
+# Le fichier de Configuration dans le proxy
+
+
+
+Voici le fichier de configuration type:
+
+```yaml
+network:
+  lobby: lobby #Le serveur où tout le monde sera envoyé par défaut
+  connexionOnLobby: true
+  maxPerLobby: 40 #Maximum de gens sur le serveur par défaut.
+  maintenance: true
+  kickRedirection:
+    enabled: true
+    server: lobby # Si un joueur est kick depuis un autre serveur il sera renvoyé sur le serveur indiqué ici.
+  status:
+    logo: false
+  players:
+    autoSend: false
+  slots:
+    autoSend: false
+  slot: 1000 #Nombre de slot maximum sur tout le proxy
+```
+
+
+

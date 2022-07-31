@@ -1,0 +1,40 @@
+---
+sidebar_position: 5
+---
+# Tuer vos serveurs 💀
+
+Pour tuer votre serveur: Vous avez besoin de son ID.
+
+Exemple ➡️  ``  service kill server servername-id``
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+  <TabItem value="proxy" label="DreamNetwork.jar - Exemple Proxy" default>
+
+```jsx title=/root/DNLauncher.jar
+service kill proxy proxy-0
+```
+
+  </TabItem>
+  <TabItem value="server" label="DreamNetwork.jar - Exemple Serveur">
+
+```jsx title=/root/DNLauncher.jar
+service kill server lobby-0
+```
+
+  </TabItem>
+</Tabs>
+
+:::warning
+
+Utilisez de préférence  [stop](./Stop)  au lieu de kill. Cela force l'extinction du processus.
+
+:::
+
+
+
+
+

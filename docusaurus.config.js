@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'DreamNetwork Documentation',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: '',
+  url: 'https://blog.dreamnetwork.cloud/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,17 +16,16 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Alexandre01Dev', // Usually your GitHub org/user name.
+  projectName: 'DreamNetwork-DocumentationV2', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'fr'],
   },
-
   presets: [
     [
       'classic',
@@ -71,10 +70,14 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://discord.dreamnetwork.cloud/',
+            label: 'Discord',
             position: 'right',
           },
+          {
+            type: "localeDropdown",
+            position: "right"
+          }
         ],
       },
       footer: {
@@ -93,16 +96,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/dreamnetworkcloud',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.dreamnetwork.cloud/',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/DreamNetworkCloud',
               },
             ],
           },
@@ -124,6 +127,7 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
+        additionalLanguages: ['java'],
         darkTheme: darkCodeTheme,
       },
     }),
