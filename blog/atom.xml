@@ -22,8 +22,7 @@
             <name>Christian</name>
             <uri>https://github.com/Christian-Martins</uri>
         </author>
-        <category label="facebook" term="facebook"/>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
+        <category label="dreamnetwork" term="dreamnetwork"/>
+        <category label="hypervisor" term="hypervisor"/>
     </entry>
 </feed>

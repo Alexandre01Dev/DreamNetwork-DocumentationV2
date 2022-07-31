@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdndocs=self.webpackChunkdndocs||[]).push([[4316],{8019:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/DreamNetwork-DocumentationV2/fr/blog/tags/facebook","allTagsPath":"/DreamNetwork-DocumentationV2/fr/blog/tags","count":1}')}}]);
