@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdndocs=self.webpackChunkdndocs||[]).push([[6918],{2249:e=>{e.exports=JSON.parse('[{"label":"dreamnetwork","permalink":"/fr/blog/tags/dreamnetwork","count":1},{"label":"hypervisor","permalink":"/fr/blog/tags/hypervisor","count":1}]')}}]);
