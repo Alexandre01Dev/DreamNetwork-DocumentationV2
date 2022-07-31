@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog</id>
+    <id>https://blog.dreamnetwork.cloud/fr/blog</id>
     <title>DreamNetwork Documentation Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog"/>
+    <link rel="alternate" href="https://blog.dreamnetwork.cloud/fr/blog"/>
     <subtitle>DreamNetwork Documentation Blog</subtitle>
-    <icon>https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/img/favicon.ico</icon>
+    <icon>https://blog.dreamnetwork.cloud/fr/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
-        <link href="https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog/welcome"/>
+        <link href="https://blog.dreamnetwork.cloud/fr/blog/welcome"/>
         <updated>2021-08-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Bannière]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Bannière" src="/DreamNetwork-DocumentationV2/fr/assets/images/Bannière-22d438de269d432f39d312b37fb7fad4.png" width="960" height="551" class="img_ev3q"></p><p>The dreamnetwork blog is now open, we will give some tips here and communicate about our solutions.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="hypervisor">Hypervisor<a class="hash-link" href="#hypervisor" title="Lien direct vers le titre">​</a></h3><p>This project has been running for more than 2 years and we wholeheartedly want the software to help people simplify the creation of a server directly linked with a proxy and also add possibilities not or hardly possible before.</p>]]></content>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Bannière" src="/fr/assets/images/Bannière-22d438de269d432f39d312b37fb7fad4.png" width="960" height="551" class="img_ev3q"></p><p>The dreamnetwork blog is now open, we will give some tips here and communicate about our solutions.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="hypervisor">Hypervisor<a class="hash-link" href="#hypervisor" title="Lien direct vers le titre">​</a></h3><p>This project has been running for more than 2 years and we wholeheartedly want the software to help people simplify the creation of a server directly linked with a proxy and also add possibilities not or hardly possible before.</p>]]></content>
         <author>
             <name>Alexandre Taillet</name>
             <uri>https://github.com/Alexandre01Dev</uri>
