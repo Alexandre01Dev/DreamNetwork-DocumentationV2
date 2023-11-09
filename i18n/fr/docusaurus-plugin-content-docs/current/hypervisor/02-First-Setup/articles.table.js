@@ -18,7 +18,8 @@ export const articles = [
   },
   {
     server: "1.10.2",
-    urlServer: "https://papermc.io/api/v2/projects/paper/versions/1.10.2/builds/918/downloads/paper-1.10.2-918.jar"
+    urlServer: "https://papermc.io/api/v2/projects/paper/versions/1.10.2/builds/918/downloads/paper-1.10.2-918.jar",
+    proxy: "VELOCITY"
   },
   {
     server: "1.11.2",
@@ -53,7 +54,11 @@ export const articles = [
     urlServer: "https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/387/downloads/paper-1.18.2-387.jar"
   },
   {
-    server: "1.19",
+    server: "1.19.2",
+    urlServer: "https://api.papermc.io/v2/projects/paper/versions/1.19/builds/65/downloads/paper-1.19-65.jar"
+  },
+  {
+    server: "1.20.1",
     urlServer: "https://api.papermc.io/v2/projects/paper/versions/1.19/builds/65/downloads/paper-1.19-65.jar"
   },
 ];

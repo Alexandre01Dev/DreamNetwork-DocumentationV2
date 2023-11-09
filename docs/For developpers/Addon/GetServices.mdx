@@ -1,0 +1,41 @@
+---
+sidebar_position: 4
+---
+# Récupérer les services
+
+## D'abord récupérons le bundle de ce dit service
+
+#### Il existe plusieurs façon de récupérer un service,
+
+> Méthode 1 : Récupérer le service en appelant le bundle
+```java
+// get the lobby service
+ BundleData mainBundle  = DNCoreAPI.getInstance().getBundleManager().getBundleData("main");
+ IExecutor lobbies = mainBundle.getExecutors().get("lobby");
+ IService lobby = lobbies.getService(1);
+```
+
+> Méthode 2 : Récupérer directement l'éxécuteur directement
+```java
+ // more simple way to get the lobbies executor
+ IExecutor lobbies = DNCoreAPI.getInstance().getContainer().getJVMExecutor("lobby", "main");
+ IService lobby = lobbies.getService(1);
+```
+
+> Méthode 3 : Récupérer le service directement
+```java
+//more simple way to get the lobby service
+IService lobby = DNCoreAPI.getInstance().getContainer().tryToGetService("main/lobby-1").orElse(null);
+// or
+DNCoreAPI.getInstance().getContainer().tryToGetService("lobby-1").ifPresent(lobby -> {
+// do my code
+});
+```
+
+
+
+
+
+
+
+

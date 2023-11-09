@@ -9,18 +9,7 @@ D'abord,vous devez télécharger le Launcher de l'hyperviseur de DreamNetwork vi
 Donnez lui les permissions<br/>
 ```chmod +x DNLauncher.jar```
 
-Puis lancez le ou crée un shell (fichier "~.sh") via cette commande:<br/>
+Puis lancez le ou créez un shell (fichier "~.sh") via cette commande:<br/>
 ```bash
 java -jar -Xms128M -Xmx512M -XX:+UseG1GC -XX:MinHeapFreeRatio=15 -XX:MaxHeapFreeRatio=30 -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=50 -XX:CompileThreshold=100 -XX:+UseCompressedOops -jar DNLauncher.jar
 ```
-
-:::danger Si vous utilisez Java 9 ou supérieur: Ajoutez ces arguments avant le -jar:
-```bash
---add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/jdk.internal.ref=ALL-UNNAMED
-```
-Example: 
-```bash
-java -Xms128M -Xmx512M --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/jdk.internal.ref=ALL-UNNAMED -jar DNLauncher.jar
-```
-
-Cela aide a ne pas avoir de "carbage collections" (Des données qui restent dans la RAM).:::

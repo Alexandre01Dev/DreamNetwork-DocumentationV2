@@ -1,0 +1,197 @@
+---
+sidebar_position: 5
+---
+## Récupérer le client d'un service
+```java
+    AServiceClient client = lobby.getClient();
+    vérifier si le client est connecté
+    if(client != null) {
+        // le client est connecté
+    } else {
+        // le client n'est pas connecté
+    }
+```
+
+## Comprendre le système de messaging
+:::tip
+Le système de messaging est un système qui permet d'envoyer des données à un service et de pouvoir les récupérer dans le service en question
+A savoir que le système de messaging est basé en JSON et qu'il peut être utile pour convertir des objets en JSON et vice versa
+:::
+
+> Voici un exemple de comment on pourrait crée un Message
+```java
+    Message message = new Message("Mon titre de message");
+    message.set("ma clé", "ma valeur");
+    message.set("mon object", new MyObject());
+```
+
+:::tip
+Dans le système de message il existe 2 systèmes de conversions, un qui est automatique et un autre qui est manuel et prédéfini.
+Le système de conversion automatique est basé sur la librairie Gson et Jackson et permet de convertir automatiquement des objets en JSON et vice versa
+Le système de conversion manuel est basé sur le système de message et permet de convertir manuellement des valeurs en une autre valeur pour pouvoir les identifier pour plus tard
+:::
+
+:::warning
+Lorsque vous utilisez le système de conversion automatique, il est important de savoir que les objets doivent être sérialisable et doivent avoir un constructeur vide
+:::
+
+Bon exemple d'objet
+```java
+@NoArgsConstructor
+@AllArgsConstructor
+public class MyObject implements Serializable {
+    private String name;
+    private int age;
+    private String[] friends;
+}
+```
+
+Mauvais exemple d'objet
+```java
+public class MyObject {
+    private String name;
+    private int age;
+    private String[] friends;
+}
+```
+
+Si vous souhaitez ignorer un attribut d'un objet, vous pouvez utiliser l'annotation @JsonIgnore
+```java
+@NoArgsConstructor
+@AllArgsConstructor
+public class MyObject implements Serializable {
+    private String name;
+    private int age;
+    @JsonIgnore
+    private String[] friends;
+}
+```
+
+:::warn
+Essayez d'éviterez de faire des objets trop complexes car cela peut poser des problèmes de conversion, comme un objet qui étends une autre classe ou qui implémente une interface
+:::
+
+Mais si dans le cas où vous souhaitez réellement faire un objet complexe, vous pouvez utiliser cette methode lorsque vous créez votre message
+imaginez que vous voulez envoyer uniquement les données de l'objet enfant et non de l'objet parent
+```java
+    public class Parent {
+        private String name;
+        private int age;
+        private String[] friends;
+    }
+```
+```java
+    public class Child extends Parent {
+        private String school;
+    }
+```
+```java
+    Message message = new Message("Mon titre de message");
+    message.set("mon object", new Child(), Child.class);
+```
+
+
+## Envoyer un message à un service
+> Il existe plusieurs façons d'envoyer un message à un service
+> ### Méthode 1 : Envoyer un message via le client
+```java
+    lobby.getClient().writeAndFlush(message); // return Packet
+```
+
+> ### Méthode 2 : Envoyer un message en convertissant le message en packet
+```java
+    message.toPacket(lobby.getClient()).dispatch();
+```
+
+Vous pouvez toujours savoir si le message a bien été envoyé ou non via son GenericFutureListener
+```java
+    message.toPacket(lobby.getClient()).dispatch(future -> {
+        if(future.isSuccess()) {
+            // le message a bien été envoyé
+        } else {
+            // le message n'a pas été envoyé
+        }
+    });
+```
+
+### Plus avancé
+Utilisation d'un système de callback
+```java
+    message.toPacket(lobby.getClient()).dispatch(future -> {
+        if(future.isSuccess()) {
+            // le message a bien été envoyé
+        } else {
+            // le message n'a pas été envoyé
+        }
+    }, new TaskHandler() {
+        @Override
+        public void onCallback() {
+            // récupération de la reponse en message via getResponse();
+        }
+    });
+```
+Ou via DNCallback
+```java
+    DNCallback.single(message.toPacket(lobby.getClient()), new TaskHandler() {
+        @Override
+        public void onCallback() {
+        }
+    });
+```
+
+Dans TaskHandler vous pouvez utiliser différentes implémentations
+```java
+    new TaskHandler() {
+        @Override
+        public void onCallback() {
+        }
+    }
+```
+```java
+    new TaskHandler() {
+        @Override
+        public void onAccepted() {
+        }
+
+        @Override
+        public void onRejected() {
+        }
+
+        @Override
+        public void onTimeout() {
+        }
+
+        @Override
+        public void onFailed() {
+        }
+
+        @Override
+        public void onCustom(String custom) {
+        }
+    }
+```
+
+Lorsque vous recevez un message avec un callback vous pouvez renvoyer une reponse voici un exemple
+```java
+message.getCallback().ifPresent(callback -> {
+    callback.send(TaskType.ACCEPTED);
+
+    // ou
+    callback.send("custom");
+
+    // ou encore vous pouvez intégrer un message dans la réponse
+    callback.mergeAndSend(new Message("Mon titre de message"), TaskType.ACCEPTED);
+});
+```
+
+Nous allons maintenant voir comment recevoir un message qu'un service nous envoie.
+Si vous voulez savoir comment recevoir le message depuis un service vous pouvez vous rendre sur la page [Recevoir un message](/fr/Recevoir%20un%20message/)
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@ sidebar_position: 5
 
 To kill your server: You have to stop the server with its ID.
 
-Example ➡️  ``  service kill server servername-id``
+Example ➡️  ``service kill servername-id``
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,18 +15,30 @@ import TabItem from '@theme/TabItem';
   <TabItem value="proxy" label="DreamNetwork.jar - Example Proxy" default>
 
 ```jsx title=/root/DNLauncher.jar
-service kill proxy proxy-0
+service kill proxy-0
 ```
 
   </TabItem>
   <TabItem value="server" label="DreamNetwork.jar - Example Server">
 
 ```jsx title=/root/DNLauncher.jar
-service kill server lobby-0
+service kill lobby-3
 ```
 
   </TabItem>
 </Tabs>
+
+Vous pouvez aussi utiliser la commande ``service kill all`` pour tuer tous les serveurs.
+
+```bash
+service kill all
+```
+
+ou même
+
+```bash
+service kill all lobby
+```
 
 :::warning
 

@@ -1,0 +1,100 @@
+---
+sidebar_position: 4
+---
+# Récupérer les services
+
+## D'abord récupérons le bundle de ce dit service
+
+#### Il existe plusieurs façon de récupérer un service,
+
+> ## Méthode 1 : Récupérer le service en appelant le bundle
+```java
+// get the lobby service
+ BundleData mainBundle  = DNCoreAPI.getInstance().getBundleManager().getBundleData("main");
+ IExecutor lobbies = mainBundle.getExecutors().get("lobby");
+ IService lobby = lobbies.getService(1);
+```
+
+> ## Méthode 2 : Récupérer directement l'éxécuteur directement
+```java
+ // more simple way to get the lobbies executor
+ IExecutor lobbies = DNCoreAPI.getInstance().getContainer().getJVMExecutor("lobby", "main");
+ IService lobby = lobbies.getService(1);
+```
+
+> ## Méthode 3 : Récupérer le service directement
+```java
+//more simple way to get the lobby service
+IService lobby = DNCoreAPI.getInstance().getContainer().tryToGetService("main/lobby-1").orElse(null);
+// or
+DNCoreAPI.getInstance().getContainer().tryToGetService("lobby-1").ifPresent(lobby -> {
+// do my code
+});
+```
+
+## Nous avons maintenant l'éxécuteur et le service, nous pouvons donc voir les méthodes disponibles
+
+> ### Start un service
+```java
+    lobbies.startService();
+```
+Mais il est possible de pouvoir démarrer un service avec des paramètres
+```java
+     lobbies.startService(IStartupConfig.builder()
+                            .xms("512M")
+                            .xmx("1024M")
+                            .startup("%java% -jar %exec%") // custom startup
+                            .type(IExecutor.Mods.DYNAMIC)
+                            .build()
+                    );
+```
+Vous croyez que c'est fini ?
+Il est possible de pouvoir savoir lorsque le service en question s'est bien démarré ou non
+```java
+  lobbies.startServer().whenStart(iService -> {
+                        // do something when the server is started
+                    }).whenConnect((iService, aServiceClient) -> {
+                        // do something when a client is connected to the server
+                    }).whenFail(() -> {
+                        // do something when the server is failed
+                    });
+```
+
+Vous pouvez faire encore d'autres choses avec les éxécuteurs mais je vous laisse découvrir par vous même
+
+## Maintenant voyons les méthodes disponibles pour les services
+
+> ### Stop un service
+```java
+    lobby.stop();
+```
+Vous pouvez savoir quand le serveur c'est bien stop via son CompletableFuture
+```java
+    lobby.stop().whenComplete((aBoolean, throwable) -> {
+                        // do something when the server is stopped
+                    });
+```
+
+> ### Redémarrer un service
+```java
+    lobby.restart().whenComplete((aBoolean, throwable) -> {
+                        // do something when the server is stopped
+                    });;
+```
+
+> ### Tuer un service
+```java
+    lobby.kill();
+```
+
+> Vous pouvez récupérer toutes les propriétés que peut avoir un service dont la ram, le port utilisé, son nom, son nom visible par le proxy, son mode, etc...
+
+Mais le plus important que nous allons voir juste après cette page... C'est de savoir comment récupérer le client d'un service et comment lui envoyer des données
+
+
+
+
+
+
+
+

@@ -6,7 +6,37 @@ sidebar_position: 2
 Vous pouvez gerez les évenements dans DreamNetwork
 
 
-> Créer une classe pour votre commandes et étendez là par la classe "Command" du package be.alexandre01.dreamnetwork
+Pour appeler un évenement vous devez d'abord instancier une classe qui implémente la classe `Event` et ensuite nous allons l'appelé depuis cette méthode
+
+
+```java title="MyCustomEvent.java"
+getDnCoreAPI().getEventsFactory().registerListener(new MyCustomListener());
+```
+
+Puis dans notre classe `MyCustomListener` nous allons appeler notre évenement
+
+```java title="MyCustomListener.java"
+public class MyCustomListener implements Listener {
+
+    @EventCatcher
+    public void onServerStart(CoreServiceStartEvent event) {
+        // Votre code ici
+    }
+}
+```
+
+Voici la liste des évenements disponible dans DreamNetwork
+
+| Nom de l'évenement | Description |
+| ------------------ | ----------- |
+| CoreServiceStartEvent | Cet évenement est appelé lorsque le service est démarré |
+| CoreServiceStopEvent | Cet évenement est appelé lorsque le service est arrêté |
+| CoreServicePreProcessEvent | Cet évenement est appelé avant le lancemement du service |
+| CoreScreenCreateEvent | Cet évenement est appelé lorsque un screen est créé |
+| CoreScreenDestroyEvent | Cet évenement est appelé lorsque un screen est détruit |
+| CoreCommandExecuteEvent | Cet évenement est appelé lorsque une commande est exécuté |
+
+
 
 
 

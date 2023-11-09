@@ -6,8 +6,15 @@ sidebar_position: 4
 Vous devez taper dans la console, service add serverType mode minimum-ram maximum-ram
 
 ```bash
-service install type serverName VERSION
+service install serverName VERSION
 ```
+
+ou vous pouvez rentrer dans le guide d'installation du service via la commande
+
+```bash
+service install
+```
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { PesterDataTable, PesterDataButton } from "@site/src/components/PesterDataTable"; import { columns, articles, moduleTests } from "./articles.table.js";
@@ -16,14 +23,14 @@ import { PesterDataTable, PesterDataButton } from "@site/src/components/PesterDa
   <TabItem value="proxy" label="DreamNetwork.jar - Exemple Proxy" default>
 
 ```jsx title=/root/DNLauncher.jar
-service install proxy proxy BUNGEECORD
+service install myProxy BUNGEECORD
 ```
 
   </TabItem>
   <TabItem value="server" label="DreamNetwork.jar - Exemple Serveur">
 
 ```jsx title=/root/DNLauncher.jar
-service install server lobby 1.8.8
+service install myServer 1.8.8
 ```
 
   </TabItem>

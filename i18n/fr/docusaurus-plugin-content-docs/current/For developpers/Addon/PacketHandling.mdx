@@ -1,0 +1,53 @@
+---
+sidebar_position: 6
+---
+## Récupérer les packets entrants
+```java
+    DNCoreAPI.getInstance().getPacketFactory().registerHandlingClass(HandlePacket.class);
+```
+
+```java
+@PacketGlobal(header = "MonProjet")
+public class HandlePacket implements PacketHandler {
+    @PacketHandler(header = "MonPacket")
+    public void onPacket() {
+        // Code
+    }
+
+    @PacketHandler(header = "MonPacket2")
+    public void onPacket2(Message message) {
+        // Code
+
+        // Exemple d'utilisation
+        String status = message.getString("status");
+        if(status.equals("ok")) {
+            System.out.println("Le status est ok");
+        }else{
+            System.out.println("Le status n'est pas ok :'c ");
+        }
+    }
+
+    @PacketHandler(header = "MonPacket3")
+    public void onPacket3(Message message, ContextChannelHandlerContext ctx) {
+        // Code
+    }
+}
+```
+
+Vous pouvez directement voir onPacket2
+```java
+@PacketGlobal
+public class HandlePacket implements PacketHandler {
+    @PacketHandler
+    public void onPacket2(Message message, String status) {
+        // Code
+        if(status.equals("ok")) {
+            System.out.println("Le status est ok");
+        }else{
+            System.out.println("Le status n'est pas ok :'c ");
+        }
+    }
+}
+```
+
+Vous pouvez récupérer

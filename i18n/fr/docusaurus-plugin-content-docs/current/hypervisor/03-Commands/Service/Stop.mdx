@@ -5,28 +5,38 @@ sidebar_position: 4
 
 Pour arrêter votre serveur : Vous devez arrêter le serveur avec son ID.
 
-Exemple ➡️  ``  service stop server servername-id`` 
+Exemple ➡️  ``  service stop servername-id``
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-
   <TabItem value="proxy" label="DreamNetwork.jar - Exemple Proxy" default>
 
 ```jsx title=/root/DNLauncher.jar
-service stop proxy proxy-0
+service stop proxy-0
 ```
 
   </TabItem>
   <TabItem value="server" label="DreamNetwork.jar - Exemple Serveur">
 
 ```jsx title=/root/DNLauncher.jar
-service stop server lobby-0
+service stop lobby-4
 ```
 
   </TabItem>
 </Tabs>
 
+Vous pouvez aussi utiliser la commande ``service stop all`` pour stopper tous les serveurs.
+
+```bash
+service stop all
+```
+
+ou même
+
+```bash
+service stop all lobby
+```
 
 

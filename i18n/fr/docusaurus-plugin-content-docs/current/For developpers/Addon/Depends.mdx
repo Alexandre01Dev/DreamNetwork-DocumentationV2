@@ -4,26 +4,27 @@ sidebar_position: 0
 # Les dépendences
 
 
-
-Vous pouvez télécharger l'API coté Addon sur ce lien:
-
-https://cdn.dreamnetwork.cloud/hypervisor/api/1.10/DreamNetwork-api.jar
-
-
-
 Ajoutez DreamNetwork-api.jar dans un dossier facilement accessible par votre IDE, dans le cas de l'exemple ci-dessous, il se situra dans le dossier libs.
 
 
+Rajouter dans votre pom.xml
 
-Rajouter les dépendences suivantes
+## Maven
+```xml
+ <repositories>
+            <repository>
+                <id>dreamnetwork</id>
+                <url>https://repo.dreamnetwork.cloud/repository/maven-snapshots/</url>
+            </repository>
+        </repositories>
+```
 
 ```xml
     <dependency>
         <groupId>be.alexandre01.dreamnetwork</groupId>
-        <artifactId>DreamNetwork-Plugin-API</artifactId>
-        <version>1.4.0-SNAPSHOT</version>
+        <artifactId>Core-API</artifactId>
+        <version>1.11.0-SNAPSHOT</version>
         <scope>system</scope>
-        <systemPath>${project.basedir}/libs/DreamNetwork-Plugin-api.jar</systemPath>
     </dependency>
     <dependency>
         <groupId>org.projectlombok</groupId>
@@ -31,6 +32,20 @@ Rajouter les dépendences suivantes
         <version>1.18.22</version>
         <scope>compile</scope>
     </dependency>
+```
+
+## Gradle :
+
+```java
+repositories {
+    maven {
+        url "https://repo.dreamnetwork.cloud/repository/maven-snapshots/"
+    }
+}
+```
+```java
+    implementation 'be.alexandre01.dreamnetwork:Core-API:1.11.0-SNAPSHOT'
+    implementation 'org.projectlombok:lombok:1.18.22'
 ```
 
 

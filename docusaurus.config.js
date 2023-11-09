@@ -26,6 +26,8 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
   },
+
+
   presets: [
     [
       'classic',
@@ -55,6 +57,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: 'DreamNetwork',
         logo: {
@@ -81,7 +88,14 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
+        logo: {
+          alt: 'DreamNetwork logo',
+          src: 'img/logo.png',
+          href: 'https://dreamnetwork.cloud/',
+          width: 30,
+          height: 30,
+        },
         links: [
           {
             title: 'Docs',
@@ -109,21 +123,9 @@ const config = {
               },
             ],
           },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
+
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} DreamNetwork, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
