@@ -1,11 +1,14 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+//import theme from "prism-react-renderer/themes/*";
 
+
+//const lightCodeTheme = require('prism-react-renderer').themes.github;
+//const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+import {themes as prismThemes} from 'prism-react-renderer';
+export default {
   title: 'DreamNetwork Documentation',
   tagline: '',
   url: 'https://blog.dreamnetwork.cloud/',
@@ -127,12 +130,12 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} DreamNetwork, Inc. Built with Docusaurus.`,
       },
-      prism: {
-        theme: lightCodeTheme,
-        additionalLanguages: ['java'],
-        darkTheme: darkCodeTheme,
-      },
+        prism: {
+            additionalLanguages: ['powershell','bash','java'],
+            theme: require('prism-react-renderer/themes/github'),
+            darkTheme: require('prism-react-renderer/themes/dracula'),
+        }
     }),
 };
 
-module.exports = config;
+//module.exports = config;
