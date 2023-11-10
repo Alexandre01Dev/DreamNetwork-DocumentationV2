@@ -37,8 +37,9 @@ Lorsque vous utilisez le système de conversion automatique, il est important de
 
 Bon exemple d'objet
 ```java
+@Data // not required
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor // not required
 public class MyObject implements Serializable {
     private String name;
     private int age;
@@ -57,6 +58,7 @@ public class MyObject {
 
 Si vous souhaitez ignorer un attribut d'un objet, vous pouvez utiliser l'annotation @JsonIgnore
 ```java
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class MyObject implements Serializable {

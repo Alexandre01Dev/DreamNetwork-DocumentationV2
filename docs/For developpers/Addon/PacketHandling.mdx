@@ -96,12 +96,7 @@ Pour envoyer un message avec le bon "header" vous devez mettre le header du glob
 ```
 
 
-
-:::warning
-Vous n'êtes pas obligé d'indiquer le PacketCast même si cela est une bonne pratique.
-Par contre il faut que 2 conditions soient respectées :
-:::
-
+Vous n'êtes pas obligé d'indiquer le PacketCast même si cela est une bonne pratique. Par contre il faut que 2 conditions soient respectées :
 - Le nom du paramètre doit être le même que la clé de l'objet dans le message ( donc si vous avez comme nom de paramètre "key", il faut que la clé de l'objet soit "key" ou "Key" ou même "kEy")
 (Le mode "SMART" est activé par défaut, cela veut dire que si vous avez comme nom de paramètre "key" et que la clé de l'objet est "Key" cela fonctionnera)
 Pour le changer vous pouvez le spécifier soit dans @PacketGlobal soit @PacketHandler ou même dans @PacketCast via son paramètre castType -> Exemple:
@@ -131,14 +126,13 @@ Voici un exemple sur maven:
 ```
 
 Et maintenant c'est bon ! vous pouvez faire comme cela:
-(Code en prenant en compte que mon message contient un objet avec comme clé "specialKey")
 ```java
     @PacketGlobal(header = "MonProjet")
     public class HandlePacket implements PacketHandler {
-        @PacketHandler(header = "MonPacket", castType = PacketHandler.PacketType.NORMAL)
-        public void onPacket(Message message, String specialKey) {
+        @PacketHandler(header = "MonPacket")
+        public void onPacket(Message message, String message) {
             // Code
-            System.out.println(specialKey);
+            System.out.println(msg);
         }
     }
 ```
