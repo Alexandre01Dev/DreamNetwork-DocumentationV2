@@ -7,13 +7,13 @@
 //const lightCodeTheme = require('prism-react-renderer').themes.github;
 //const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 export default {
   title: 'DreamNetwork Documentation',
   tagline: '',
-  url: 'https://blog.dreamnetwork.cloud/',
+  url: 'https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/',
   baseUrl: '/DreamNetwork-DocumentationV2/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -78,7 +78,7 @@ export default {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://discord.dreamnetwork.cloud/',
             label: 'Discord',
@@ -130,11 +130,11 @@ export default {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} DreamNetwork, Inc. Built with Docusaurus.`,
       },
-        prism: {
-            additionalLanguages: ['powershell','bash','java'],
-            theme: require('prism-react-renderer/themes/github'),
-            darkTheme: require('prism-react-renderer/themes/dracula'),
-        }
+      prism: {
+        additionalLanguages: ['powershell', 'bash', 'java'],
+        theme: require('prism-react-renderer/themes/github'),
+        darkTheme: require('prism-react-renderer/themes/dracula'),
+      }
     }),
 };
 
