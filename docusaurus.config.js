@@ -11,7 +11,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 export default {
   title: 'DreamNetwork Documentation',
   tagline: '',
-  url: 'https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/',
+  url: 'https://alexandre01dev.github.io',
   baseUrl: '/DreamNetwork-DocumentationV2/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
