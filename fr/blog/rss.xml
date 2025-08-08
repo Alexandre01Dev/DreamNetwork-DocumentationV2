@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>DreamNetwork Documentation Blog</title>
-        <link>https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog</link>
+        <link>https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/fr/blog</link>
         <description>DreamNetwork Documentation Blog</description>
         <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,13 +10,13 @@
         <language>fr</language>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog/welcome</link>
-            <guid>https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog/welcome</guid>
+            <link>https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/fr/blog/welcome</link>
+            <guid>https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/fr/blog/welcome</guid>
             <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Bannière]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Bannière" src="https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/assets/images/Banni%C3%A8re-22d438de269d432f39d312b37fb7fad4.png" width="960" height="551" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Bannière" src="https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/fr/assets/images/Banni%C3%A8re-22d438de269d432f39d312b37fb7fad4.png" width="960" height="551" class="img_ev3q"></p>
 <p>The dreamnetwork blog is now open, we will give some tips here and communicate about our solutions.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hypervisor">Hypervisor<a href="https://blog.dreamnetwork.cloud/DreamNetwork-DocumentationV2/fr/blog/welcome#hypervisor" class="hash-link" aria-label="Lien direct vers Hypervisor" title="Lien direct vers Hypervisor">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hypervisor">Hypervisor<a href="https://alexandre01dev.github.io/DreamNetwork-DocumentationV2/fr/blog/welcome#hypervisor" class="hash-link" aria-label="Lien direct vers Hypervisor" title="Lien direct vers Hypervisor">​</a></h3>
 <p>This project has been running for more than 2 years and we wholeheartedly want the software to help people simplify the creation of a server directly linked with a proxy and also add possibilities not or hardly possible before.</p>]]></content:encoded>
             <category>dreamnetwork</category>
             <category>hypervisor</category>
