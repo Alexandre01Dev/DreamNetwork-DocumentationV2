@@ -12,7 +12,7 @@ export default {
   title: 'DreamNetwork Documentation',
   tagline: '',
   url: 'https://blog.dreamnetwork.cloud/',
-  baseUrl: '/',
+  baseUrl: '/DreamNetwork-DocumentationV2/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
